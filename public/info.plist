@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>Tuniversity</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.widget.Tuniversity</string>
+	<key>CFBundleName</key>
+	<string>Tuniversity</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>Height</key>
+	<integer>768</integer>
+	<key>MainHTML</key>
+	<string>index.html</string>
+	<key>Width</key>
+	<integer>1024</integer>
+	<key>IBNotifiesOnReady</key>
+	<true/>
+</dict>
+</plist>

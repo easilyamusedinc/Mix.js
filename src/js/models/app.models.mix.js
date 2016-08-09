@@ -105,7 +105,7 @@ App.module('Models', function( Models, App, Backbone, Marionette, $, _ ) {
       var position = this.exactTime(),
         playing = this.get('playing');
       if ( position > Math.min(this.get('maxTime'), this.get('duration')) ) {
-        this.play(0).pause();
+        this.play(0);
       } else {
         this.set('position', position, {silent: true});
       }
@@ -197,7 +197,7 @@ App.module('Models', function( Models, App, Backbone, Marionette, $, _ ) {
         success: function( response ) {
           if ( response.uri ) {
             self.set('binURI', response.uri, {silent: true});
-            location.hash = response.uri.split('/').pop();
+            //location.hash = response.uri.split('/').pop();
           }
         }
       });

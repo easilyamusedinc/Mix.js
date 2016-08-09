@@ -18,19 +18,12 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
       'touchstart .ff'    : 'fastForward'
     },
 
-    ui: {
-      clock : '.clock'
-    },
-
     modelEvents: {
       'change:playing': 'render'
     },
 
     initialize: function() {
       this.unhide();
-      App.vent.on('anim-tick', function() {
-        this.updatePosition();
-      }.bind(this));
       this.render();
     },
 
@@ -84,35 +77,6 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
         this.model.play(pos + 10);
       }  else {
         this.model.set('position', pos + 10);
-      }
-    },
-
-    updatePosition: function() {
-      var canvas = this.ui.clock[0],
-        ctx = canvas.getContext('2d'),
-        pos = this.model.attributes.position,
-        str = App.util.formatTime(pos),
-        ghost = ['8', '8', ':', '8', '8', ':', '8', '8'],
-        arr = str.split(''),
-        i = 0,
-        x = 78;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.font = '76px "digital-7"';
-      ctx.textAlign = 'right';
-      // draw ghost 7-segment
-      // faster to loop twice than to keep changing fillStyle
-      ctx.fillStyle = 'hsla(215, 77%, 76%, 0.085)';
-      while ( i < 8 ) {
-        ctx.fillText(ghost[i], x, 88);
-        x += ( ghost[++i] === ':' ? 20 : 40 );
-      }
-      i = 0;
-      x = 78;
-      // draw actual position
-      ctx.fillStyle = 'hsl(215, 77%, 76%)';
-      while ( i < 8 ) {
-        ctx.fillText(arr[i], x, 88);
-        x += ( arr[++i] === ':' ? 20 : 40 );
       }
     },
 

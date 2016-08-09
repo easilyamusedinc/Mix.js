@@ -56,10 +56,14 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
       this.offscreen.width = canvas.width;
       this.offscreen.height = canvas.height;
       ctx = this.offscreen.getContext('2d');
-      ctx.fillStyle = 'hsl(' + hue + ', 100%, 40%)';
+      var grd = ctx.createLinearGradient(0,0,0,200);
+      grd.addColorStop(0, 'red');
+      grd.addColorStop(0.25, 'yellow');
+      grd.addColorStop(1, 'green');
+      ctx.fillStyle = grd;
       while ( i < height ) {
         hue += ( ( 1 - i / height ) * 0.6 );
-        ctx.fillStyle = 'hsl(' + hue + ', 100%, 40%)';
+        ctx.fill();
         ctx.fillRect(0, height - i, width, 2);
         i += 3;
       }
@@ -67,7 +71,7 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
 
     serializeData: function() {
       var data = this.model.toJSON();
-      data.gain = App.util.scale(Math.sqrt(data.gain), 0, 1.15, 220, 0);
+      data.gain = App.util.scale(Math.sqrt(data.gain), 0, 1.15, 955, 0);
       data.pan = App.util.scale(data.pan, -1, 1, -150, 150);
       data.muted = data.muted ? 'active' : '';
       data.soloed = data.soloed ? 'active' : '';
@@ -125,7 +129,7 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
       css = Math.min(max, css);
       css = Math.max(0, css);
       this.dragState.$target.css('top', css + 'px');
-      this.model.set('gain', Math.pow(App.util.scale(css, 0, 220, 1.15, 0), 2));
+      this.model.set('gain', Math.pow(App.util.scale(css, 0, 955, 1.15, 0), 2));
     },
 
     dragPanner: function( ev ) {
@@ -146,14 +150,14 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
 
     dragHandler: function( ev ) {
       if ( this.faderCanDrag ) {
-        this.dragFader(ev, 220);
+        this.dragFader(ev, 955);
       } else if ( this.pannerCanDrag ) {
         this.dragPanner(ev);
       }
     },
 
     resetFader: function() {
-      var top = App.util.scale(1, 0, 1.15, 220, 0);
+      var top = App.util.scale(1, 0, 1.15, 955, 0);
       this.$el.find('.fader').css('top', top + 'px');
       this.model.set('gain', 1);
     },

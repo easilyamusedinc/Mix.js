@@ -13,7 +13,7 @@ App.module('Loader', function( Loader, App, Backbone, Marionette, $, _ ) {
   bindEvents = function() {
     App.vent.on('loaded', updatePercent);
     App.vent.on('ready', function(){
-      $elem.hide();
+      $elem.parent().addClass('hide');
     });
   };
 

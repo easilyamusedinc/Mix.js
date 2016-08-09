@@ -1,34 +1,14 @@
 {
-  "name": "1901",
-  "gain": 1,
+  "name": "Happy Vocal Mix",
+  "gain": 1.344,
   "position": 0,
-  "minTime": 3,
-  "maxTime": 192,
+  "minTime": 0,
+  "maxTime": 210,
   "tracks": [
     {
-      "name": "Kit L",
-      "path": "sounds\/1901_drumsleft.mp3",
-      "gain": 0.5175,
-      "pan": -1,
-      "muted": false,
-      "_muted": false,
-      "soloed": false,
-      "afl": true
-    },
-    {
-      "name": "Kit R",
-      "path": "sounds\/1901_drumsright.mp3",
-      "gain": 0.5175,
-      "pan": 1,
-      "muted": false,
-      "_muted": false,
-      "soloed": false,
-      "afl": true
-    },
-    {
-      "name": "Triggers",
-      "path": "sounds\/1901_triggers.mp3",
-      "gain": 0.57045454545455,
+      "name": "Channel 1",
+      "path": "http://vincentmre.com/sounds/1Happy-Lead-Vocal-(ForTuniMix).m4a",
+      "gain": 1,
       "pan": 0,
       "muted": false,
       "_muted": false,
@@ -36,9 +16,9 @@
       "afl": true
     },
     {
-      "name": "Bass",
-      "path": "sounds\/1901_bass.mp3",
-      "gain": 0.38159090909091,
+      "name": "Channel 2",
+      "path": "http://vincentmre.com/sounds/2Happy-C-Harm-1-(ForTuniMix).m4a",
+      "gain": 1,
       "pan": 0,
       "muted": false,
       "_muted": false,
@@ -46,69 +26,9 @@
       "afl": true
     },
     {
-      "name": "Keys",
-      "path": "sounds\/1901_keys.mp3",
-      "gain": 0.76318181818182,
-      "pan": -0.31817540662604,
-      "muted": false,
-      "_muted": false,
-      "soloed": false,
-      "afl": true
-    },
-    {
-      "name": "Gtr 1",
-      "path": "sounds\/1901_gtr1.mp3",
-      "gain": 1.1134090909091,
-      "pan": -0.16763424252422,
-      "muted": false,
-      "_muted": false,
-      "soloed": false,
-      "afl": true
-    },
-    {
-      "name": "Gtr 2",
-      "path": "sounds\/1901_gtr2.mp3",
-      "gain": 0.805,
-      "pan": 0.44667745226923,
-      "muted": false,
-      "_muted": false,
-      "soloed": false,
-      "afl": true
-    },
-    {
-      "name": "Synth 1",
-      "path": "sounds\/1901_synth1.mp3",
-      "gain": 0.41295454545455,
-      "pan": -0.020272528811521,
-      "muted": false,
-      "_muted": false,
-      "soloed": false,
-      "afl": true
-    },
-    {
-      "name": "Synth 2",
-      "path": "sounds\/1901_synth2.mp3",
-      "gain": 0.61159090909091,
-      "pan": 0.30769297080169,
-      "muted": false,
-      "_muted": false,
-      "soloed": false,
-      "afl": true
-    },
-    {
-      "name": "Siren",
-      "path": "sounds\/1901_siren.mp3",
-      "gain": 0.54886363636364,
-      "pan": 0.086623719781989,
-      "muted": false,
-      "_muted": false,
-      "soloed": false,
-      "afl": true
-    },
-    {
-      "name": "Vox FX",
-      "path": "sounds\/1901_voxfx.mp3",
-      "gain": 0.87295454545455,
+      "name": "Channel 3",
+      "path": "http://vincentmre.com/sounds/3Happy-C-Harm-2-(ForTuniMix).m4a",
+      "gain": 1,
       "pan": 0,
       "muted": false,
       "_muted": false,
@@ -116,9 +36,9 @@
       "afl": true
     },
     {
-      "name": "Ld Vox",
-      "path": "sounds\/1901_leadvox.mp3",
-      "gain": 1.0088636363636,
+      "name": "Channel 4",
+      "path": "http://vincentmre.com/sounds/4Happy-C-Harm-3-(ForTuniMix).m4a",
+      "gain": 1,
       "pan": 0,
       "muted": false,
       "_muted": false,
