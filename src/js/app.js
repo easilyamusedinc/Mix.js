@@ -79,8 +79,8 @@
     if ( ++App.loaded === App.tracks ) {
       App.ready = true;
       App.vent.trigger('ready');
-      top = App.util.scale( App.mix.get('gain'), 0, 1.5, 926, 0 );
-      $('#master .fader').css( 'top', top + 'px' );
+      top = App.util.scale( App.mix.get('gain'), 926, 1.5, 926, 926 );
+      $('#master .fader').css( 'left', top + 'px' );
     }
   });
 
@@ -150,15 +150,15 @@ if ( !('ontouchstart' in window) ) {
     var $elem = $( ev.currentTarget ), deg, touch;
     if ( $elem.hasClass('fader') ) {
       App.faderCanDrag = true;
-      App.dragState.px = parseInt( $elem.css('top'), 10 );
+      App.dragState.px = parseInt( $elem.css('left'), 10 );
     }
     if ( ev.type === 'touchstart' && ev.originalEvent.changedTouches ) {
       touch = ev.originalEvent.changedTouches[ 0 ];
       App.dragState.x = touch.pageX;
-      App.dragState.y = touch.pageY;
+      App.dragState.y = touch.pageX;
     } else {
       App.dragState.x = ev.pageX;
-      App.dragState.y = ev.pageY;
+      App.dragState.y = ev.pageX;
     }
     App.dragState.$target = $elem;
   };
@@ -175,19 +175,19 @@ if ( !('ontouchstart' in window) ) {
     }
 
     var touch = ev.type === 'touchmove' && ev.originalEvent.changedTouches,
-      pos = touch && touch[ 0 ] ? touch[ 0 ].pageY : ev.pageY,
+      pos = touch && touch[ 0 ] ? touch[ 0 ].pageX : ev.pageX,
       state = App.dragState.y,
       delta = pos - state,
       css = App.dragState.px + delta;
     css = Math.min( 926, css );
     css = Math.max( 0, css );
-    App.dragState.$target.css('top', css + 'px');
-    App.mix.set( 'gain', App.util.scale( css, 0, 926, 1.5, 0 ) );
+    App.dragState.$target.css('left', css + 'px');
+    App.mix.set( 'gain', App.util.scale( css, 0, 926, 0, 1.5 ) );
   };
 
   App.resetFader = function() {
     var top = App.util.scale( 1, 0, 1.5, 926, 0 );
-    $('#master .fader').css( 'top', top + 'px' );
+    $('#master .fader').css( 'left', top + 'px' );
     App.mix.set( 'gain', 1 );
   };
 

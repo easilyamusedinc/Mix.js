@@ -71,7 +71,7 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
 
     serializeData: function() {
       var data = this.model.toJSON();
-      data.gain = App.util.scale(Math.sqrt(data.gain), 0, 1.15, 955, 0);
+      data.gain = App.util.scale(Math.sqrt(data.gain), 0, 1.15, 280, 0);
       data.pan = App.util.scale(data.pan, -1, 1, -150, 150);
       data.muted = data.muted ? 'active' : '';
       data.soloed = data.soloed ? 'active' : '';
@@ -95,7 +95,7 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
       var $elem = $(ev.currentTarget), deg, touch;
       if ( $elem.hasClass('fader') ) {
         this.faderCanDrag = true;
-        this.dragState.px = parseInt($elem.css('top'), 10);
+        this.dragState.px = parseInt($elem.css('left'), 10);
       } else if ( $elem.hasClass('panner') ) {
         this.pannerCanDrag = true;
         this.dragState.width = parseInt($elem.width());
@@ -105,10 +105,10 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
       if ( ev.type === 'touchstart' && ev.originalEvent.changedTouches ) {
         touch = ev.originalEvent.changedTouches[0];
         this.dragState.x = touch.pageX;
-        this.dragState.y = touch.pageY;
+        this.dragState.y = touch.pageX;
       } else {
         this.dragState.x = ev.pageX;
-        this.dragState.y = ev.pageY;
+        this.dragState.y = ev.pageX;
       }
       this.dragState.$target = $elem;
     },
@@ -122,14 +122,14 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
 
     dragFader: function( ev, max ) {
       var touch = ev.type === 'touchmove' && ev.originalEvent.changedTouches,
-        pos = touch && touch[0] ? touch[0].pageY : ev.pageY,
-        state = this.dragState.y,
+        pos = touch && touch[0] ? touch[0].pageX : ev.pageX,
+        state = this.dragState.x,
         delta = pos - state,
         css = this.dragState.px + delta;
       css = Math.min(max, css);
       css = Math.max(0, css);
-      this.dragState.$target.css('top', css + 'px');
-      this.model.set('gain', Math.pow(App.util.scale(css, 0, 955, 1.15, 0), 2));
+      this.dragState.$target.css('left', css + 'px');
+      this.model.set('gain', Math.pow(App.util.scale(css, 0, 280, 0, 1.15), 2));
     },
 
     dragPanner: function( ev ) {
@@ -137,7 +137,7 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
         width = this.dragState.width,
         height = this.dragState.height,
         offset = this.dragState.offset,
-        top = touch && touch[0] ? touch[0].pageY : ev.pageY,
+        top = touch && touch[0] ? touch[0].pageX : ev.pageX,
         left = touch && touch[0] ? touch[0].pageX : ev.pageX,
         a = offset.left + ( width / 2 ) - left,
         b = offset.top + ( height / 2 ) - top,
@@ -150,15 +150,15 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
 
     dragHandler: function( ev ) {
       if ( this.faderCanDrag ) {
-        this.dragFader(ev, 955);
+        this.dragFader(ev, 280);
       } else if ( this.pannerCanDrag ) {
         this.dragPanner(ev);
       }
     },
 
     resetFader: function() {
-      var top = App.util.scale(1, 0, 1.15, 955, 0);
-      this.$el.find('.fader').css('top', top + 'px');
+      var top = App.util.scale(1, 0, 1.15, 280, 0);
+      this.$el.find('.fader').css('left', top + 'px');
       this.model.set('gain', 1);
     },
 

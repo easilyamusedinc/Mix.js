@@ -43,7 +43,7 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
             $('body').addClass('playing');
           }
         });
-      },1000);
+      },500);
       setTimeout(function(){
         $('body').addClass('power-on');
         $('.channel').on('click tap', '.icon', function(){
@@ -51,7 +51,8 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
           $(this).next().find('.btn.mute').trigger('click');
           return false;
         });
-      },1500);
+        $('.mixer-body').addClass('show');
+      },1000);
     }
 
   });

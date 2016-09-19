@@ -12,8 +12,7 @@
       "pan": 0,
       "muted": false,
       "_muted": false,
-      "soloed": false,
-      "afl": true
+      "soloed": false
     },
     {
       "name": "Channel 2",
@@ -22,8 +21,7 @@
       "pan": 0,
       "muted": false,
       "_muted": false,
-      "soloed": false,
-      "afl": true
+      "soloed": false
     },
     {
       "name": "Channel 3",
@@ -32,8 +30,7 @@
       "pan": 0,
       "muted": false,
       "_muted": false,
-      "soloed": false,
-      "afl": true
+      "soloed": false
     },
     {
       "name": "Channel 4",
@@ -42,8 +39,7 @@
       "pan": 0,
       "muted": false,
       "_muted": false,
-      "soloed": false,
-      "afl": true
+      "soloed": false
     }
   ]
 }
