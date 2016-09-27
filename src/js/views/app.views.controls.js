@@ -62,8 +62,10 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
       pos = this.model.get('position');
       if ( this.model.get('playing') ) {
         this.model.play(pos - 10);
+        this.model.pause();
       }  else {
         this.model.set('position', pos - 10);
+        this.model.pause();
       }
     },
 

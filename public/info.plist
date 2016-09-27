@@ -6,11 +6,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>Tuniversity</string>
+	<string>Tunimixer</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.widget.Tuniversity</string>
+	<string>com.apple.widget.Tunimixer</string>
 	<key>CFBundleName</key>
-	<string>Tuniversity</string>
+	<string>Tunimixer</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
