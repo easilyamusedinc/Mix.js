@@ -51,6 +51,18 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
           $(this).next().find('.btn.mute').trigger('click');
           return false;
         });
+
+        var $masterFader = $('#master .fader'),
+        $masterFaderLeft = $masterFader.offset().left - 30,
+        $masterTrackFaderSlot = $('#master .track').find('.fader-slot');
+        $masterTrackFaderSlot.css('width', $masterFaderLeft+'px');
+
+        $('.channel').each(function(){
+          var $this = $(this),
+          $thisFader = $this.find('.fader'),
+          $faderLeft = $thisFader.offset().left - 30;
+          $this.find('.fader-slot').css('width', $faderLeft+'px');
+        });
         $('.mixer-body').addClass('show');
       },1000);
     }

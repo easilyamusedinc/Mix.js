@@ -79,7 +79,7 @@
     if ( ++App.loaded === App.tracks ) {
       App.ready = true;
       App.vent.trigger('ready');
-      top = App.util.scale( App.mix.get('gain'), 926, 1.5, 926, 926 );
+      top = App.util.scale( App.mix.get('gain'), 460, 1.5, 460, 460 );
       $('#master .fader').css( 'left', top + 'px' );
     }
   });
@@ -151,6 +151,10 @@ if ( !('ontouchstart' in window) ) {
     if ( $elem.hasClass('fader') ) {
       App.faderCanDrag = true;
       App.dragState.px = parseInt( $elem.css('left'), 10 );
+      var $masterFader = $('#master .fader'),
+      $masterFaderLeft = $masterFader.offset().left - 30,
+      $masterTrackFaderSlot = $('#master .track').find('.fader-slot');
+      $masterTrackFaderSlot.css('width', $masterFaderLeft+'px');
     }
     if ( ev.type === 'touchstart' && ev.originalEvent.changedTouches ) {
       touch = ev.originalEvent.changedTouches[ 0 ];
@@ -179,14 +183,18 @@ if ( !('ontouchstart' in window) ) {
       state = App.dragState.y,
       delta = pos - state,
       css = App.dragState.px + delta;
-    css = Math.min( 926, css );
+    css = Math.min( 460, css );
     css = Math.max( 0, css );
     App.dragState.$target.css('left', css + 'px');
-    App.mix.set( 'gain', App.util.scale( css, 0, 926, 0, 1.5 ) );
+    App.mix.set( 'gain', App.util.scale( css, 0, 460, 0, 1.5 ) );
+    var $masterFader = $('#master .fader'),
+    $masterFaderLeft = $masterFader.offset().left - 30,
+    $masterTrackFaderSlot = $('#master .track').find('.fader-slot');
+    $masterTrackFaderSlot.css('width', $masterFaderLeft+'px');
   };
 
   App.resetFader = function() {
-    var top = App.util.scale( 1, 0, 1.5, 926, 0 );
+    var top = App.util.scale( 1, 0, 1.5, 460, 0 );
     $('#master .fader').css( 'left', top + 'px' );
     App.mix.set( 'gain', 1 );
   };

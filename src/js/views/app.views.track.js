@@ -71,7 +71,7 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
 
     serializeData: function() {
       var data = this.model.toJSON();
-      data.gain = App.util.scale(Math.sqrt(data.gain), 0, 1.15, 280, 0);
+      data.gain = App.util.scale(Math.sqrt(data.gain), 0, 1.15, 460, 0);
       data.pan = App.util.scale(data.pan, -1, 1, -150, 150);
       data.muted = data.muted ? 'active' : '';
       data.soloed = data.soloed ? 'active' : '';
@@ -125,11 +125,15 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
         pos = touch && touch[0] ? touch[0].pageX : ev.pageX,
         state = this.dragState.x,
         delta = pos - state,
-        css = this.dragState.px + delta;
+        css = this.dragState.px + delta,
+        dragStateTarget = this.dragState.$target,
+        dragStateTargetSiblings = dragStateTarget.siblings('.fader-slot'),
+        value = dragStateTarget.offset().left-30;
       css = Math.min(max, css);
       css = Math.max(0, css);
       this.dragState.$target.css('left', css + 'px');
-      this.model.set('gain', Math.pow(App.util.scale(css, 0, 280, 0, 1.15), 2));
+      dragStateTargetSiblings.css('width', value+'px');
+      this.model.set('gain', Math.pow(App.util.scale(css, 0, 460, 0, 1.15), 2));
     },
 
     dragPanner: function( ev ) {
@@ -150,14 +154,14 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
 
     dragHandler: function( ev ) {
       if ( this.faderCanDrag ) {
-        this.dragFader(ev, 280);
+        this.dragFader(ev, 460);
       } else if ( this.pannerCanDrag ) {
         this.dragPanner(ev);
       }
     },
 
     resetFader: function() {
-      var top = App.util.scale(1, 0, 1.15, 280, 0);
+      var top = App.util.scale(1, 0, 1.15, 460, 0);
       this.$el.find('.fader').css('left', top + 'px');
       this.model.set('gain', 1);
     },

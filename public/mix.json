@@ -7,34 +7,7 @@
   "tracks": [
     {
       "name": "Channel 1",
-      "path": "http://vincentmre.com/sounds/1Happy-Lead-Vocal-(ForTuniMix).m4a",
-      "gain": 1,
-      "pan": 0,
-      "muted": false,
-      "_muted": false,
-      "soloed": false
-    },
-    {
-      "name": "Channel 2",
-      "path": "http://vincentmre.com/sounds/2Happy-C-Harm-1-(ForTuniMix).m4a",
-      "gain": 1,
-      "pan": 0,
-      "muted": false,
-      "_muted": false,
-      "soloed": false
-    },
-    {
-      "name": "Channel 3",
-      "path": "http://vincentmre.com/sounds/3Happy-C-Harm-2-(ForTuniMix).m4a",
-      "gain": 1,
-      "pan": 0,
-      "muted": false,
-      "_muted": false,
-      "soloed": false
-    },
-    {
-      "name": "Channel 4",
-      "path": "http://vincentmre.com/sounds/4Happy-C-Harm-3-(ForTuniMix).m4a",
+      "path": "http://tuniversity.com/wp-content/themes/tuniversity%20copy/sounds/sample.m4a",
       "gain": 1,
       "pan": 0,
       "muted": false,
