@@ -11,12 +11,12 @@
 }
 
 @font-face {
-	font-family: 'tuniversity';
-	src: url('../fonts/tuniversity.eot?pacsws');
-	src: url('../fonts/tuniversity.eot?pacsws#iefix') format('embedded-opentype'),
-		url('../fonts/tuniversity.ttf?pacsws') format('truetype'),
-		url('../fonts/tuniversity.woff?pacsws') format('woff'),
-		url('../fonts/tuniversity.svg?pacsws#tuniversity') format('svg');
+	font-family: 'tunimixer';
+	src: url('../fonts/tunimixer.eot?apvelr');
+	src: url('../fonts/tunimixer.eot?apvelr#iefix') format('embedded-opentype'),
+		url('../fonts/tunimixer.ttf?apvelr') format('truetype'),
+		url('../fonts/tunimixer.woff?apvelr') format('woff'),
+		url('../fonts/tunimixer.svg?apvelr#tunimixer') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -24,7 +24,7 @@
 [class^="icon-"], 
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'tuniversity' !important;
+  font-family: 'tunimixer' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;

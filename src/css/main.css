@@ -101,19 +101,14 @@ button {
 	z-index: 0;
 }
 
-.title-bar h1 {
+.title-bar .logo {
     color: #000;
     font: normal 56px/1 'knockout', Arial, sans-serif;
     margin: 0;
     text-transform: uppercase;
-    opacity: 0.5;
     padding: 14px 0 0 22px;
     position: relative;
     z-index: 1;
-}
-
-.power-on .title-bar h1 {
-	opacity: 1;
 }
 
 .mixer-bits {
@@ -141,7 +136,7 @@ button {
 }
 
 .channel.inactive {
-	opacity: 0.2;
+	opacity: 0.25;
 	pointer-events: none;
 }
 
@@ -155,6 +150,11 @@ button {
 	display: none;
 }
 
+.channel.inactive .track {
+	position: relative;
+	top: -28px;
+}
+
 .channel.muted-col {
 	opacity: 0.2;
 }
@@ -162,9 +162,9 @@ button {
 .btn-wrap {
     float: right;
     margin-top: -12px;
-    margin-right: -15px;
+    margin-right: -10px;
     overflow: hidden;
-    width: 90px;
+    width: 100px;
 }
 
 .btn {
@@ -346,23 +346,19 @@ button {
 .btn-cntrl.play:before,
 .btn-cntrl.play:after,
 .btn-cntrl.rw:before {
-	display: block;
-	font-family: 'tuniversity' !important;
-	font-size: 40px;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	line-height: 65px;
-	speak: none;
-	text-transform: none;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	width: 100%;
-	height: 100%;
-	border: 8px solid #000;
-	-webkit-border-radius: 80px;
-	-moz-border-radius: 80px;
-	border-radius: 80px;
+    display: block;
+    font-family: 'tunimixer' !important;
+    font-size: 76px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 80px;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    height: 100%;
 }
 
 .btn-cntrl.play:before,

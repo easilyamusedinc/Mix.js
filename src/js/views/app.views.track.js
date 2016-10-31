@@ -179,8 +179,20 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
       muted = this.model.get('muted');
       if ( muted ) {
         this.model.unmute();
+        $('.channel').each(function(){
+          var $this = $(this),
+          $thisFader = $this.find('.fader'),
+          $faderLeft = $thisFader.offset().left - 30;
+          $this.find('.fader-slot').css('width', $faderLeft+'px');
+        });
       } else {
         this.model.mute();
+        $('.channel').each(function(){
+          var $this = $(this),
+          $thisFader = $this.find('.fader'),
+          $faderLeft = $thisFader.offset().left - 30;
+          $this.find('.fader-slot').css('width', $faderLeft+'px');
+        });
       }
     },
 
@@ -192,8 +204,20 @@ App.module('Views', function( Views, App, Backbone, Marionette, $, _ ) {
       soloed = this.model.get('soloed');
       if ( soloed ) {
         this.model.unsolo();
+        $('.channel').each(function(){
+          var $this = $(this),
+          $thisFader = $this.find('.fader'),
+          $faderLeft = $thisFader.offset().left - 30;
+          $this.find('.fader-slot').css('width', $faderLeft+'px');
+        });
       } else {
         this.model.solo();
+        $('.channel').each(function(){
+          var $this = $(this),
+          $thisFader = $this.find('.fader'),
+          $faderLeft = $thisFader.offset().left - 30;
+          $this.find('.fader-slot').css('width', $faderLeft+'px');
+        });
       }
     },
 
